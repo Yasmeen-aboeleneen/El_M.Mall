@@ -48,6 +48,7 @@ dependencies:
   geocoding: ^3.0.0
   geolocator: ^12.0.0
   get: ^4.6.6
+  google_fonts: ^6.2.1
   google_maps_flutter: ^2.7.0
   google_sign_in: ^6.2.1
   grouped_list: ^6.0.0
@@ -81,8 +82,11 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-    - Assets\Logo.png
-  #   - images/a_dot_ham.jpeg
+    - Assets\Images\logo2.png
+    - Assets\Images\Logo.png
+    - Assets\Images\img1.png
+    - Assets\Images\img2.png
+    - Assets\Images\imgg.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
