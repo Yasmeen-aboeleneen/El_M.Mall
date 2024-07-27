@@ -1,8 +1,10 @@
+import 'package:elmamlouk_mall/Controller/onBoarding_controller.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Onboardingcontainer extends StatelessWidget {
+class Onboardingcontainer extends GetView<OnboardingControllerImplement> {
   const Onboardingcontainer({super.key});
 
   @override
@@ -10,7 +12,9 @@ class Onboardingcontainer extends StatelessWidget {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        controller.nextButton();
+      },
       child: Container(
         height: h * .06,
         width: w * .5,
@@ -18,10 +22,10 @@ class Onboardingcontainer extends StatelessWidget {
             color: kPrimary, borderRadius: BorderRadius.circular(25)),
         child: Center(
           child: Text(
-            'Continue',
+            'Next',
             style: GoogleFonts.cairo(
                 fontWeight: FontWeight.bold,
-                fontSize: w * .05,
+                fontSize: w * .06,
                 color: kveryWhite),
           ),
         ),
