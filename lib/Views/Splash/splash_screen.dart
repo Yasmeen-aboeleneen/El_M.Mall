@@ -1,4 +1,5 @@
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
+import 'package:elmamlouk_mall/Core/Constants/images.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,7 +19,7 @@ class SplashScreen extends StatelessWidget {
               colors: [kPrimary, kveryWhite, kveryWhite, kPrimary2])),
       child: Stack(children: [
         Image.asset(
-          "Assets/Images/logo2.png",
+          Images.logo2,
           width: w * 2,
           height: h * .7,
         ),
