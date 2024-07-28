@@ -1,5 +1,7 @@
+import 'package:elmamlouk_mall/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:elmamlouk_mall/Data/DataSource/Static/static.dart';
 
 abstract class OnboardingController extends GetxController {
   nextButton();
@@ -12,10 +14,15 @@ class OnboardingControllerImplement extends OnboardingController {
   @override
   nextButton() {
     currentPageIndex++;
-    pageController.animateToPage(
-        duration: const Duration(milliseconds: 900),
-        curve: Curves.easeInOut,
-        currentPageIndex);
+
+    if (currentPageIndex > onBoardingList.length) {
+      Get.offAllNamed(AppRoutes.loginScreen);
+    } else {
+      pageController.animateToPage(
+          duration: const Duration(milliseconds: 900),
+          curve: Curves.easeInOut,
+          currentPageIndex);
+    }
   }
 
   @override

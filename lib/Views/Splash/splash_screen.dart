@@ -1,10 +1,29 @@
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 import 'package:elmamlouk_mall/Core/Constants/images.dart';
+import 'package:elmamlouk_mall/Views/OnBoarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  changeScreen() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.to(() => const OnboardingScreen());
+    });
+  }
+
+  @override
+  void initState() {
+    changeScreen();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
