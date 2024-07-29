@@ -1,9 +1,11 @@
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
+import 'package:elmamlouk_mall/Core/Localization/change_language.dart';
 import 'package:elmamlouk_mall/Views/Widget/LangWidgets/customLangButton.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LanguagesScreen extends StatelessWidget {
+class LanguagesScreen extends GetView<LocaleController> {
   const LanguagesScreen({super.key});
 
   @override
@@ -17,10 +19,9 @@ class LanguagesScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.center,
               child: Text(
-                textAlign: TextAlign.left,
-                "Choose Language :",
+                "titleLanguage".tr,
                 style: GoogleFonts.notoSansOlChiki(
                     fontWeight: FontWeight.bold,
                     fontSize: w * .055,

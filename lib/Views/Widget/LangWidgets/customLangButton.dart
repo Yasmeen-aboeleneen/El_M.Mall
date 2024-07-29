@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 
 class Customlangbutton extends StatelessWidget {
-   Customlangbutton({
+  Customlangbutton({
     Key? key,
     required this.title,
     required this.onpressed,
@@ -17,12 +17,12 @@ class Customlangbutton extends StatelessWidget {
     var w = MediaQuery.of(context).size.width;
 
     return Container(
-      padding: const EdgeInsets.only(left: 12, right: 12),
+      padding: const EdgeInsets.only(left: 20, right: 20),
       width: w,
       child: MaterialButton(
           color: kPrimary,
           shape:
-              BeveledRectangleBorder(borderRadius: BorderRadius.circular(30)),
+              BeveledRectangleBorder(borderRadius: BorderRadius.circular(10)),
           splashColor: kPrimary2,
           elevation: 2,
           onPressed: onpressed,

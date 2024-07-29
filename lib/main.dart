@@ -1,4 +1,5 @@
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
+import 'package:elmamlouk_mall/Core/Localization/change_language.dart';
 import 'package:elmamlouk_mall/Core/Localization/translation.dart';
 import 'package:elmamlouk_mall/Core/Services/services.dart';
 import 'package:elmamlouk_mall/Views/Langs/languages_screen.dart';
@@ -18,9 +19,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
       translations: MyTranslation(),
       debugShowCheckedModeBanner: false,
+      locale: controller.language,
       title: 'المملوك',
       theme: ThemeData(
         scaffoldBackgroundColor: kveryWhite,
