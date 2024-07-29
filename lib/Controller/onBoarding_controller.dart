@@ -15,7 +15,7 @@ class OnboardingControllerImplement extends OnboardingController {
   nextButton() {
     currentPageIndex++;
 
-    if (currentPageIndex > onBoardingList.length) {
+    if (currentPageIndex > onBoardingList.length - 1) {
       Get.offAllNamed(AppRoutes.loginScreen);
     } else {
       pageController.animateToPage(
