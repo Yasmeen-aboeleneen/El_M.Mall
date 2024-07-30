@@ -20,7 +20,6 @@ class LanguagesScreen extends GetView<LocaleController> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              textDirection: TextDirection.ltr,
               "titleLanguage".tr,
               style: GoogleFonts.notoSansOlChiki(
                   fontWeight: FontWeight.bold,

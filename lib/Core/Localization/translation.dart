@@ -3,7 +3,11 @@ import 'package:get/get.dart';
 class MyTranslation extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
-        "ar": {"titleLanguage": "اختر اللغة"},
-        "en": {"titleLanguage": "Choose Language"}
+        "ar": {
+          "titleLanguage": "اختر اللغة",
+        },
+        "en": {
+          "titleLanguage": "Choose Language",
+        },
       };
 }

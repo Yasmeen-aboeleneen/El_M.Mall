@@ -1,6 +1,6 @@
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 import 'package:elmamlouk_mall/Core/Constants/images.dart';
-import 'package:elmamlouk_mall/Views/Langs/languages_screen.dart';
+import 'package:elmamlouk_mall/Views/OnBoarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,7 +15,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   changeScreen() {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(() => const LanguagesScreen());
+      Get.to(() => const OnboardingScreen());
     });
   }
 
