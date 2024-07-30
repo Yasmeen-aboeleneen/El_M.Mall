@@ -1,19 +1,18 @@
- 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 
-class Customtextfield extends StatelessWidget {
-  const Customtextfield({
+class CustomPhonetextfield extends StatelessWidget {
+  const CustomPhonetextfield({
     Key? key,
     required this.hintText,
     required this.labelText,
-     // required this.textEditingController,
+    // required this.textEditingController,
   }) : super(key: key);
   final String hintText;
   final String labelText;
- 
+
   // final TextEditingController textEditingController;
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class Customtextfield extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
         // controller:textEditingController,
-        keyboardType: TextInputType.emailAddress,
+        keyboardType: TextInputType.phone,
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: GoogleFonts.notoSansOlChiki(
@@ -39,7 +38,10 @@ class Customtextfield extends StatelessWidget {
             style: GoogleFonts.notoSansOlChiki(
                 fontWeight: FontWeight.bold, fontSize: w * .05, color: kGrey),
           ),
-           
+          suffixIcon: const Icon(
+            Icons.phone_enabled_rounded,
+            color: kGrey,
+          ),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25),
               borderSide: BorderSide(color: kPrimary, width: w * .006)),

@@ -1,7 +1,11 @@
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
+import 'package:elmamlouk_mall/Views/Home/home_screen.dart';
+import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customButton.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customPassTextField.dart';
+import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customPhoneField.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customTextField.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -11,8 +15,8 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
-    return  Scaffold(
-       appBar: AppBar(
+    return Scaffold(
+        appBar: AppBar(
           backgroundColor: kveryWhite,
           elevation: 0.0,
           centerTitle: true,
@@ -28,7 +32,7 @@ class SignUpScreen extends StatelessWidget {
             children: [
               Center(
                 child: Text(
-                  "Welcome Back",
+                  "Create an account",
                   style: GoogleFonts.notoSansOlChiki(
                       fontWeight: FontWeight.bold,
                       fontSize: w * .07,
@@ -36,49 +40,42 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: h * .01,
-              ),
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: Text(
-                    "Login with your email and password\n or login with social media",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.notoSansOlChiki(
-                        fontWeight: FontWeight.bold,
-                        fontSize: w * .04,
-                        color: kGrey),
-                  ),
-                ),
-              ),
-
-               SizedBox(
                 height: h * .055,
               ),
               const Customtextfield(
-                labelText: 'Email',
-                hintText: 'Enter your email',   
+                labelText: 'Username',
+                hintText: 'Enter username',
               ),
-       
               SizedBox(
-                height: h * .055,
+                height: h * .035,
               ),
               const Customtextfield(
                 labelText: 'Email',
-                hintText: 'Enter your email',  
-            
-       
+                hintText: 'Enter your email',
               ),
+              SizedBox(
+                height: h * .035,
+              ),
+              const CustomPhonetextfield(
+                  hintText: "Enter your phone number",
+                  labelText: "Phone Number"),
               SizedBox(
                 height: h * .035,
               ),
               const CustomPasswordtextfield(
                 hintText: "Enter your password",
                 labelText: "Password",
-              )
+              ),
+              SizedBox(
+                height: h * .035,
+              ),
+              CustomButton(
+                  title: "Sign Up",
+                  onpressed: () {
+                    Get.to(() => const HomeScreen());
+                  })
             ],
           ),
-        )
-    );
+        ));
   }
 }

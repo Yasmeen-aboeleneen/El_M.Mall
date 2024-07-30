@@ -116,13 +116,9 @@ class LoginScreen extends StatelessWidget {
               ),
               const Row(
                 children: [
-                  SocialmediaRow(
-                      image:Images.google,
-                       text: "Google"),
-                         SocialmediaRow(
-                      image:Images.facebook,
-                       text: "Facebook"),
-                 ],
+                  SocialmediaRow(image: Images.google, text: "Google"),
+                  SocialmediaRow(image: Images.facebook, text: "Facebook"),
+                ],
               )
             ],
           ),
