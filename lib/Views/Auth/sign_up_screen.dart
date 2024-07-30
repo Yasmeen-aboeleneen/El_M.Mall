@@ -57,7 +57,7 @@ class SignUpScreen extends StatelessWidget {
               ),
               const Customtextfield(
                 labelText: 'Email',
-                hintText: 'Enter your email',  iconData: Icons.abc,
+                hintText: 'Enter your email',   
               ),
        
               SizedBox(
@@ -65,8 +65,7 @@ class SignUpScreen extends StatelessWidget {
               ),
               const Customtextfield(
                 labelText: 'Email',
-                hintText: 'Enter your email', iconData:
-            Icons.mail_outline_rounded,
+                hintText: 'Enter your email',  
             
        
               ),

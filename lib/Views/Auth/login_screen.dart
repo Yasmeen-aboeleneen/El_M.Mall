@@ -1,8 +1,12 @@
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
+import 'package:elmamlouk_mall/Views/Home/home_screen.dart';
+import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customButton.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customPassTextField.dart';
+import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customRaw.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customTextField.dart';
 import 'package:flutter/material.dart';
- import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -26,6 +30,9 @@ class LoginScreen extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: ListView(
             children: [
+              SizedBox(
+                height: h * .01,
+              ),
               Center(
                 child: Text(
                   "Welcome Back",
@@ -40,26 +47,23 @@ class LoginScreen extends StatelessWidget {
               ),
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  padding: const EdgeInsets.only(left: 5, right: 5),
                   child: Text(
                     "Login with your email and password\n or login with social media",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.notoSansOlChiki(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         fontSize: w * .04,
                         color: kGrey),
                   ),
                 ),
               ),
               SizedBox(
-                height: h * .055,
+                height: h * .07,
               ),
               const Customtextfield(
                 labelText: 'Email',
-                hintText: 'Enter your email', iconData:
-            Icons.mail_outline_rounded,
-            
-       
+                hintText: 'Enter your email',
               ),
               SizedBox(
                 height: h * .035,
@@ -67,7 +71,19 @@ class LoginScreen extends StatelessWidget {
               const CustomPasswordtextfield(
                 hintText: "Enter your password",
                 labelText: "Password",
-              )
+              ),
+              SizedBox(
+                height: h * .02,
+              ),
+              const CustomRaw(),
+              SizedBox(
+                height: h * .02,
+              ),
+              CustomButton(
+                  title: "Login",
+                  onpressed: () {
+                    Get.to(() => const HomeScreen());
+                  })
             ],
           ),
         ));

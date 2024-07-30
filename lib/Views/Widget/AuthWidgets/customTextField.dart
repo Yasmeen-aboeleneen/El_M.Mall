@@ -9,12 +9,11 @@ class Customtextfield extends StatelessWidget {
     Key? key,
     required this.hintText,
     required this.labelText,
-    required this.iconData,
-    // required this.textEditingController,
+     // required this.textEditingController,
   }) : super(key: key);
   final String hintText;
   final String labelText;
-  final IconData iconData;
+ 
   // final TextEditingController textEditingController;
   @override
   Widget build(BuildContext context) {
@@ -40,10 +39,7 @@ class Customtextfield extends StatelessWidget {
             style: GoogleFonts.notoSansOlChiki(
                 fontWeight: FontWeight.bold, fontSize: w * .05, color: kGrey),
           ),
-          suffixIcon: Icon(
-            iconData,
-            color: kGrey,
-          ),
+           
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25),
               borderSide: BorderSide(color: kPrimary, width: w * .006)),
