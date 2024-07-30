@@ -1,9 +1,13 @@
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
+import 'package:elmamlouk_mall/Core/Constants/images.dart';
+import 'package:elmamlouk_mall/Views/Auth/sign_up_screen.dart';
 import 'package:elmamlouk_mall/Views/Home/home_screen.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customButton.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customPassTextField.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customRaw.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customTextField.dart';
+import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/dividers.dart';
+import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/socialMedia_row.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -83,7 +87,43 @@ class LoginScreen extends StatelessWidget {
                   title: "Login",
                   onpressed: () {
                     Get.to(() => const HomeScreen());
-                  })
+                  }),
+              SizedBox(
+                height: h * .02,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.to(() => const SignUpScreen());
+                },
+                child: Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: Text(
+                    "Don't have an account? SignUp",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.notoSansOlChiki(
+                        fontWeight: FontWeight.bold,
+                        fontSize: w * .04,
+                        color: kPrimary),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: h * .02,
+              ),
+              const Dividers(),
+              SizedBox(
+                height: h * .02,
+              ),
+              const Row(
+                children: [
+                  SocialmediaRow(
+                      image:Images.google,
+                       text: "Google"),
+                         SocialmediaRow(
+                      image:Images.facebook,
+                       text: "Facebook"),
+                 ],
+              )
             ],
           ),
         ));
