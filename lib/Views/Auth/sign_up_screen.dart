@@ -4,8 +4,8 @@ import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
