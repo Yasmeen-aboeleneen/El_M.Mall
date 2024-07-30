@@ -2,8 +2,7 @@ import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customPassTextField.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customTextField.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+ import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -18,7 +17,7 @@ class LoginScreen extends StatelessWidget {
           elevation: 0.0,
           centerTitle: true,
           title: Text(
-            "login".tr,
+            "Login",
             style: GoogleFonts.notoSansOlChiki(
                 fontWeight: FontWeight.bold, fontSize: w * .06, color: kGrey),
           ),
@@ -57,7 +56,10 @@ class LoginScreen extends StatelessWidget {
               ),
               const Customtextfield(
                 labelText: 'Email',
-                hintText: 'Enter your email',
+                hintText: 'Enter your email', iconData:
+            Icons.mail_outline_rounded,
+            
+       
               ),
               SizedBox(
                 height: h * .035,
