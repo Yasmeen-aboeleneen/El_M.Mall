@@ -1,6 +1,6 @@
+import 'package:elmamlouk_mall/Controller/auth/login_controller.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 import 'package:elmamlouk_mall/Core/Constants/images.dart';
-import 'package:elmamlouk_mall/Views/Auth/sign_up_screen.dart';
 import 'package:elmamlouk_mall/Views/Home/home_screen.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customButton.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customPassTextField.dart';
@@ -17,6 +17,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LoginControllerImplement controller = Get.put(LoginControllerImplement());
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -93,7 +94,7 @@ class LoginScreen extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(() => const SignUpScreen());
+                  controller.goToSignUp();
                 },
                 child: Align(
                   alignment: AlignmentDirectional.centerStart,
