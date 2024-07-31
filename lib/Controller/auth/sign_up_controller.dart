@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 abstract class SignUpController extends GetxController {
   signUp();
-  goToSignUp();
+  goToLogin();
 }
 
 class SignUpControllerImplement extends SignUpController {
@@ -16,8 +16,8 @@ class SignUpControllerImplement extends SignUpController {
   signUp() {}
 
   @override
-  goToSignUp() {
-    Get.toNamed(AppRoutes.signUpScreen);
+  goToLogin() {
+    Get.offNamed(AppRoutes.loginScreen);
   }
 
   @override

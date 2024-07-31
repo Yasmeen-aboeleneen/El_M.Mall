@@ -42,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: h * .055,
+                height: h * .08,
               ),
               Customtextfield(
                 labelText: 'Username',
@@ -82,7 +82,26 @@ class SignUpScreen extends StatelessWidget {
                   title: "Sign Up",
                   onpressed: () {
                     Get.to(() => const HomeScreen());
-                  })
+                  }),
+              SizedBox(
+                height: h * .035,
+              ),
+              GestureDetector(
+                onTap: () {
+                  controller.goToLogin();
+                },
+                child: Align(
+                  alignment: AlignmentDirectional.center,
+                  child: Text(
+                    "Already have an account? Login",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.notoSansOlChiki(
+                        fontWeight: FontWeight.bold,
+                        fontSize: w * .04,
+                        color: kPrimary),
+                  ),
+                ),
+              ),
             ],
           ),
         ));
