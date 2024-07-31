@@ -1,7 +1,7 @@
-import 'package:elmamlouk_mall/Controller/auth/forgot_password_controller.dart';
+import 'package:elmamlouk_mall/Controller/auth/verify_code_controller.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
-import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customButton.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,8 +10,8 @@ class VerifyCodeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ForgotPasswordControllerImplement controller =
-    //     Get.put(ForgotPasswordControllerImplement());
+    VerifyCodeControllerImplement controller =
+        Get.put(VerifyCodeControllerImplement());
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -31,26 +31,32 @@ class VerifyCodeScreen extends StatelessWidget {
           SizedBox(
             height: h * .011,
           ),
-          Center(
-            child: Text(
-              "We've sent the code to your email",
-              style: GoogleFonts.notoSansOlChiki(
-                  fontWeight: FontWeight.bold, fontSize: w * .04, color: kGrey),
-            ),
+          Text(
+            "We've sent the code to\n yasmeenaboeleneen10@gmail.com",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.notoSansOlChiki(
+                fontWeight: FontWeight.bold, fontSize: w * .04, color: kGrey),
           ),
           SizedBox(
             height: h * .06,
           ),
-          // CustomPasswordtextfield(
-          //         hintText: "Enter your password",
-          //         labelText: "Password",
-          //         textEditingController: controller.password,
-          //       ),
+          OtpTextField(
+            numberOfFields: 5,
+            borderColor: kPrimary,
+            cursorColor: kPrimary,
+            fieldWidth: w * .13,
+            borderRadius: BorderRadius.circular(20),
+            showFieldAsBox: true,
+            onCodeChanged: (String code) {},
+            onSubmit: (String verificationCode) {
+              controller.goToResetPassword();
+            },
+          ),
           SizedBox(
             height: h * .06,
           ),
           Padding(
-            padding:  EdgeInsets.only(left: w*.06,bottom: h*.03),
+            padding: EdgeInsets.only(left: w * .06, bottom: h * .03),
             child: Align(
               alignment: Alignment.centerLeft,
               child: GestureDetector(
@@ -65,14 +71,6 @@ class VerifyCodeScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          CustomButton(
-              title: "Verify",
-              onpressed: () {
-                // controller.goToVerifyCode();
-              }),
-          SizedBox(
-            height: h * .035,
           ),
         ],
       ),
