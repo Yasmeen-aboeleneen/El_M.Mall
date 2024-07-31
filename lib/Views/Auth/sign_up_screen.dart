@@ -1,3 +1,4 @@
+import 'package:elmamlouk_mall/Controller/auth/sign_up_controller.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 import 'package:elmamlouk_mall/Views/Home/home_screen.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customButton.dart';
@@ -13,6 +14,7 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SignUpControllerImplement controller = Get.put(SignUpControllerImplement());
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -42,29 +44,36 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(
                 height: h * .055,
               ),
-              const Customtextfield(
+              Customtextfield(
                 labelText: 'Username',
-                hintText: 'Enter username',
+                hintText: 'Enter your username',
+                iconData: Icons.person_outline_outlined,
+                textEditingController: controller.userName,
               ),
               SizedBox(
                 height: h * .035,
               ),
-              const Customtextfield(
+              Customtextfield(
                 labelText: 'Email',
                 hintText: 'Enter your email',
+                iconData: Icons.mail_outline_outlined,
+                textEditingController: controller.email,
               ),
               SizedBox(
                 height: h * .035,
               ),
-              const CustomPhonetextfield(
-                  hintText: "Enter your phone number",
-                  labelText: "Phone Number"),
+              CustomPhonetextfield(
+                hintText: "Enter your phone number",
+                labelText: "Phone Number",
+                textEditingController: controller.phoneNumber,
+              ),
               SizedBox(
                 height: h * .035,
               ),
-              const CustomPasswordtextfield(
+              CustomPasswordtextfield(
                 hintText: "Enter your password",
                 labelText: "Password",
+                textEditingController: controller.password,
               ),
               SizedBox(
                 height: h * .035,

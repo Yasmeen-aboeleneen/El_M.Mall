@@ -1,4 +1,3 @@
- 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,12 +8,14 @@ class Customtextfield extends StatelessWidget {
     Key? key,
     required this.hintText,
     required this.labelText,
-     // required this.textEditingController,
+    required this.iconData,
+    required this.textEditingController,
   }) : super(key: key);
   final String hintText;
   final String labelText;
- 
-  // final TextEditingController textEditingController;
+  final IconData iconData;
+
+  final TextEditingController textEditingController;
   @override
   Widget build(BuildContext context) {
     var w = MediaQuery.of(context).size.width;
@@ -22,7 +23,7 @@ class Customtextfield extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
-        // controller:textEditingController,
+        controller: textEditingController,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
           hintText: hintText,
@@ -39,7 +40,10 @@ class Customtextfield extends StatelessWidget {
             style: GoogleFonts.notoSansOlChiki(
                 fontWeight: FontWeight.bold, fontSize: w * .05, color: kGrey),
           ),
-           
+          suffixIcon: Icon(
+            iconData,
+            color: kGrey,
+          ),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25),
               borderSide: BorderSide(color: kPrimary, width: w * .006)),

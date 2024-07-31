@@ -8,12 +8,12 @@ class CustomPhonetextfield extends StatelessWidget {
     Key? key,
     required this.hintText,
     required this.labelText,
-    // required this.textEditingController,
+    required this.textEditingController,
   }) : super(key: key);
   final String hintText;
   final String labelText;
 
-  // final TextEditingController textEditingController;
+  final TextEditingController textEditingController;
   @override
   Widget build(BuildContext context) {
     var w = MediaQuery.of(context).size.width;
@@ -21,7 +21,7 @@ class CustomPhonetextfield extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
-        // controller:textEditingController,
+        controller: textEditingController,
         keyboardType: TextInputType.phone,
         decoration: InputDecoration(
           hintText: hintText,
@@ -39,7 +39,7 @@ class CustomPhonetextfield extends StatelessWidget {
                 fontWeight: FontWeight.bold, fontSize: w * .05, color: kGrey),
           ),
           suffixIcon: const Icon(
-            Icons.phone_enabled_rounded,
+            Icons.phone_android_rounded,
             color: kGrey,
           ),
           focusedBorder: OutlineInputBorder(

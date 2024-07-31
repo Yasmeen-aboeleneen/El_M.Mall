@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,9 +9,11 @@ class CustomPasswordtextfield extends StatefulWidget {
     Key? key,
     required this.hintText,
     required this.labelText,
+    required this.textEditingController,
   }) : super(key: key);
   final String hintText;
   final String labelText;
+  final TextEditingController textEditingController;
 
   @override
   State<CustomPasswordtextfield> createState() =>
@@ -36,6 +39,7 @@ class _CustomPasswordtextfieldState extends State<CustomPasswordtextfield> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
+        controller: TextEditingController(),
         obscureText: _obscured,
         decoration: InputDecoration(
           hintText: widget.hintText,
@@ -44,8 +48,8 @@ class _CustomPasswordtextfieldState extends State<CustomPasswordtextfield> {
           contentPadding:
               const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              ),
+            borderRadius: BorderRadius.circular(25),
+          ),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           label: Text(
             widget.labelText,
@@ -63,14 +67,11 @@ class _CustomPasswordtextfieldState extends State<CustomPasswordtextfield> {
             ),
           ),
           focusedBorder: OutlineInputBorder(
-             borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(25),
               borderSide: BorderSide(color: kPrimary, width: w * .006)),
-          
         ),
         cursorColor: kPrimary,
-        
       ),
-      
     );
   }
 }
