@@ -1,6 +1,5 @@
 import 'package:elmamlouk_mall/Controller/auth/sign_up_controller.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
-import 'package:elmamlouk_mall/Views/Home/home_screen.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customButton.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customPassTextField.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customPhoneField.dart';
@@ -81,7 +80,7 @@ class SignUpScreen extends StatelessWidget {
               CustomButton(
                   title: "Sign Up",
                   onpressed: () {
-                    Get.to(() => const HomeScreen());
+                    controller.signUp();
                   }),
               SizedBox(
                 height: h * .035,
