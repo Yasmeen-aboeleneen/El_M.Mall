@@ -27,8 +27,8 @@ class CheckEmailControllerImplement extends CheckEmailController {
 
   @override
   void dispose() {
-     email.dispose();
- 
+    email.dispose();
+
     super.dispose();
   }
 }
