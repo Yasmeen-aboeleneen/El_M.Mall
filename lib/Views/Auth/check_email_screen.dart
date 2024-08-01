@@ -16,6 +16,7 @@ class CheckEmailScreen extends StatelessWidget {
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: kveryWhite,
         body: Container(
       padding: EdgeInsets.only(top: h * .25),
       child: ListView(

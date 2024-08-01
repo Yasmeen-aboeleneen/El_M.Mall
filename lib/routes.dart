@@ -5,6 +5,7 @@ import 'package:elmamlouk_mall/Views/Auth/reset_password_screen.dart';
 import 'package:elmamlouk_mall/Views/Auth/sign_up_screen.dart';
 import 'package:elmamlouk_mall/Views/Auth/success_SignUp_screen.dart';
 import 'package:elmamlouk_mall/Views/Auth/verify_code_screen.dart';
+import 'package:elmamlouk_mall/Views/Home/home_screen.dart';
 import 'package:elmamlouk_mall/Views/Langs/languages_screen.dart';
 import 'package:elmamlouk_mall/Views/OnBoarding/onboarding_screen.dart';
 import 'package:elmamlouk_mall/Views/Auth/success_new_pass_screen.dart';
@@ -21,6 +22,8 @@ class AppRoutes {
   static const String resetPasswordScreen = "/resetPasswordScreen";
   static const String successNewPassScreen = "/successNewPassScreen";
   static const String languageScreen = "/languageScreen";
+   static const String homeScreen = "/homeScreen";
+
 }
 
 Map<String, Widget Function(BuildContext)> routes = {
@@ -34,4 +37,6 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoutes.resetPasswordScreen: (context) => const ResetPasswordScreen(),
   AppRoutes.successNewPassScreen: (context) => const SuccessNewPassScreen(),
   AppRoutes.languageScreen: (context) => const LanguagesScreen(),
+  AppRoutes.homeScreen:(context)=>const HomeScreen(),
+
 };

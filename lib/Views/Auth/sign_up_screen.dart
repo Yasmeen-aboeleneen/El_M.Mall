@@ -17,6 +17,7 @@ class SignUpScreen extends StatelessWidget {
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
+        backgroundColor: kveryWhite,
         appBar: AppBar(
           backgroundColor: kveryWhite,
           elevation: 0.0,

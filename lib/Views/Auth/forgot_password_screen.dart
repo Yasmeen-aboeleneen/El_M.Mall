@@ -16,51 +16,54 @@ class ForgotPasswordScreen extends StatelessWidget {
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
+        backgroundColor: kveryWhite,
         body: Container(
-      padding: EdgeInsets.only(top: h * .25),
-      child: ListView(
-        children: [
-          Center(
-            child: Text(
-              "Password Recovery",
-              style: GoogleFonts.notoSansOlChiki(
-                  fontWeight: FontWeight.bold,
-                  fontSize: w * .068,
-                  color: kPrimary),
-            ),
+          padding: EdgeInsets.only(top: h * .25),
+          child: ListView(
+            children: [
+              Center(
+                child: Text(
+                  "Password Recovery",
+                  style: GoogleFonts.notoSansOlChiki(
+                      fontWeight: FontWeight.bold,
+                      fontSize: w * .068,
+                      color: kPrimary),
+                ),
+              ),
+              SizedBox(
+                height: h * .011,
+              ),
+              Center(
+                child: Text(
+                  "Enter your email to recover your password",
+                  style: GoogleFonts.notoSansOlChiki(
+                      fontWeight: FontWeight.bold,
+                      fontSize: w * .04,
+                      color: kGrey),
+                ),
+              ),
+              SizedBox(
+                height: h * .06,
+              ),
+              Customtextfield(
+                labelText: 'Email',
+                hintText: 'Enter your email',
+                iconData: Icons.mail_outline_outlined,
+                textEditingController: controller.email,
+              ),
+              SizedBox(
+                height: h * .06,
+              ),
+              CustomButton(
+                  title: "Check",
+                  onpressed: () {
+                    controller.goToVerifyCode();
+                  }),
+              SizedBox(
+                height: h * .035,
+              ),
+            ],
           ),
-          SizedBox(
-            height: h * .011,
-          ),
-          Center(
-            child: Text(
-              "Enter your email to recover your password",
-              style: GoogleFonts.notoSansOlChiki(
-                  fontWeight: FontWeight.bold, fontSize: w * .04, color: kGrey),
-            ),
-          ),
-          SizedBox(
-            height: h * .06,
-          ),
-          Customtextfield(
-            labelText: 'Email',
-            hintText: 'Enter your email',
-            iconData: Icons.mail_outline_outlined,
-            textEditingController: controller.email,
-          ),
-          SizedBox(
-            height: h * .06,
-          ),
-          CustomButton(
-              title: "Check",
-              onpressed: () {
-                controller.goToVerifyCode();
-              }),
-          SizedBox(
-            height: h * .035,
-          ),
-        ],
-      ),
-    ));
+        ));
   }
 }

@@ -16,58 +16,61 @@ class ResetPasswordScreen extends StatelessWidget {
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
+        backgroundColor: kveryWhite,
         body: Container(
-      padding: EdgeInsets.only(top: h * .25),
-      child: ListView(
-        children: [
-          Center(
-            child: Text(
-              "Reset Your Password",
-              style: GoogleFonts.notoSansOlChiki(
-                  fontWeight: FontWeight.bold,
-                  fontSize: w * .068,
-                  color: kPrimary),
-            ),
+          padding: EdgeInsets.only(top: h * .25),
+          child: ListView(
+            children: [
+              Center(
+                child: Text(
+                  "Reset Your Password",
+                  style: GoogleFonts.notoSansOlChiki(
+                      fontWeight: FontWeight.bold,
+                      fontSize: w * .068,
+                      color: kPrimary),
+                ),
+              ),
+              SizedBox(
+                height: h * .011,
+              ),
+              Center(
+                child: Text(
+                  "Please enter your new password",
+                  style: GoogleFonts.notoSansOlChiki(
+                      fontWeight: FontWeight.bold,
+                      fontSize: w * .04,
+                      color: kGrey),
+                ),
+              ),
+              SizedBox(
+                height: h * .06,
+              ),
+              CustomPasswordtextfield(
+                hintText: "Enter your new password",
+                labelText: "New Password",
+                textEditingController: controller.password,
+              ),
+              SizedBox(
+                height: h * .033,
+              ),
+              CustomPasswordtextfield(
+                hintText: "Re-enter your new password",
+                labelText: "Confirm Password",
+                textEditingController: controller.repassword,
+              ),
+              SizedBox(
+                height: h * .06,
+              ),
+              CustomButton(
+                  title: "Reset",
+                  onpressed: () {
+                    controller.goToSuccessNewPas();
+                  }),
+              SizedBox(
+                height: h * .035,
+              ),
+            ],
           ),
-          SizedBox(
-            height: h * .011,
-          ),
-          Center(
-            child: Text(
-              "Please enter your new password",
-              style: GoogleFonts.notoSansOlChiki(
-                  fontWeight: FontWeight.bold, fontSize: w * .04, color: kGrey),
-            ),
-          ),
-          SizedBox(
-            height: h * .06,
-          ),
-          CustomPasswordtextfield(
-            hintText: "Enter your new password",
-            labelText: "New Password",
-            textEditingController: controller.password,
-          ),
-          SizedBox(
-            height: h * .033,
-          ),
-          CustomPasswordtextfield(
-            hintText: "Re-enter your new password",
-            labelText: "Confirm Password",
-            textEditingController: controller.repassword,
-          ),
-          SizedBox(
-            height: h * .06,
-          ),
-          CustomButton(
-              title: "Reset",
-              onpressed: () {
-                controller.goToSuccessNewPas();
-              }),
-          SizedBox(
-            height: h * .035,
-          ),
-        ],
-      ),
-    ));
+        ));
   }
 }

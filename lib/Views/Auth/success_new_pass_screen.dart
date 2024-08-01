@@ -13,6 +13,7 @@ class SuccessNewPassScreen extends StatelessWidget {
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: kveryWhite,
       body: Align(
         alignment: Alignment.center,
         child: Container(
