@@ -1,5 +1,6 @@
 import 'package:elmamlouk_mall/Controller/auth/check_email_controller.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
+import 'package:elmamlouk_mall/Core/Utils/Functions/valid_input.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customButton.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customTextField.dart';
 import 'package:flutter/material.dart';
@@ -19,50 +20,57 @@ class CheckEmailScreen extends StatelessWidget {
         backgroundColor: kveryWhite,
         body: Container(
           padding: EdgeInsets.only(top: h * .25),
-          child: ListView(
-            children: [
-              Center(
-                child: Text(
-                  "Check Email",
-                  style: GoogleFonts.notoSansOlChiki(
-                      fontWeight: FontWeight.bold,
-                      fontSize: w * .068,
-                      color: kPrimary),
+          child: Form(
+            key: controller.formState,
+            child: ListView(
+              children: [
+                Center(
+                  child: Text(
+                    "Check Email",
+                    style: GoogleFonts.notoSansOlChiki(
+                        fontWeight: FontWeight.bold,
+                        fontSize: w * .068,
+                        color: kPrimary),
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: h * .011,
-              ),
-              Center(
-                child: Text(
-                  "Enter your email to check it",
-                  style: GoogleFonts.notoSansOlChiki(
-                      fontWeight: FontWeight.bold,
-                      fontSize: w * .04,
-                      color: kGrey),
+                SizedBox(
+                  height: h * .011,
                 ),
-              ),
-              SizedBox(
-                height: h * .06,
-              ),
-              Customtextfield(
-                labelText: 'Email',
-                hintText: 'Enter your email',
-                iconData: Icons.mail_outline_outlined,
-                textEditingController: controller.email,
-              ),
-              SizedBox(
-                height: h * .06,
-              ),
-              CustomButton(
-                  title: "Check",
-                  onpressed: () {
-                    controller.goToVerifyCodeForSignUpScreen();
-                  }),
-              SizedBox(
-                height: h * .035,
-              ),
-            ],
+                Center(
+                  child: Text(
+                    "Enter your email to check it",
+                    style: GoogleFonts.notoSansOlChiki(
+                        fontWeight: FontWeight.bold,
+                        fontSize: w * .04,
+                        color: kGrey),
+                  ),
+                ),
+                SizedBox(
+                  height: h * .06,
+                ),
+                Customtextfield(
+                  valid: (val) {
+                    return validInput(val!, 5, 100, "email");
+                  },
+                  labelText: 'Email',
+                  hintText: 'Enter your email',
+                  iconData: Icons.mail_outline_outlined,
+                  textEditingController: controller.email,
+                ),
+                SizedBox(
+                  height: h * .06,
+                ),
+                CustomButton(
+                    title: "Check",
+                    onpressed: () {
+                      controller.checkEmail();
+                      controller.goToVerifyCodeForSignUpScreen();
+                    }),
+                SizedBox(
+                  height: h * .035,
+                ),
+              ],
+            ),
           ),
         ));
   }

@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,10 +9,12 @@ class CustomPasswordtextfield extends StatefulWidget {
     required this.hintText,
     required this.labelText,
     required this.textEditingController,
+    required this.valid,
   }) : super(key: key);
   final String hintText;
   final String labelText;
   final TextEditingController textEditingController;
+  final String? Function(String?) valid;
 
   @override
   State<CustomPasswordtextfield> createState() =>
@@ -39,7 +40,8 @@ class _CustomPasswordtextfieldState extends State<CustomPasswordtextfield> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
-        controller: TextEditingController(),
+        validator: widget.valid,
+        controller: widget.textEditingController,
         obscureText: _obscured,
         decoration: InputDecoration(
           hintText: widget.hintText,

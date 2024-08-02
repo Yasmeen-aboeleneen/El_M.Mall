@@ -9,9 +9,11 @@ class CustomPhonetextfield extends StatelessWidget {
     required this.hintText,
     required this.labelText,
     required this.textEditingController,
+    required this.valid,
   }) : super(key: key);
   final String hintText;
   final String labelText;
+  final String? Function(String?) valid;
 
   final TextEditingController textEditingController;
   @override
@@ -22,6 +24,7 @@ class CustomPhonetextfield extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
         controller: textEditingController,
+        validator: valid,
         keyboardType: TextInputType.phone,
         decoration: InputDecoration(
           hintText: hintText,

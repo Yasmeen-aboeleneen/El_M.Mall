@@ -9,11 +9,12 @@ class Customtextfield extends StatelessWidget {
     required this.hintText,
     required this.labelText,
     required this.iconData,
-    required this.textEditingController,
+    required this.textEditingController, required this.valid,
   }) : super(key: key);
   final String hintText;
   final String labelText;
   final IconData iconData;
+  final String? Function(String?) valid;
 
   final TextEditingController textEditingController;
   @override
@@ -23,6 +24,7 @@ class Customtextfield extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: TextFormField(
+        validator: valid,
         controller: textEditingController,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
