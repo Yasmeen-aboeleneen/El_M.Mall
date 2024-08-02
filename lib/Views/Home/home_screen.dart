@@ -1,14 +1,13 @@
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 import 'package:flutter/material.dart';
-  
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const  Scaffold(
+    return const Scaffold(
       backgroundColor: kveryWhite,
-       
     );
   }
 }

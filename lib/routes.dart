@@ -4,6 +4,7 @@ import 'package:elmamlouk_mall/Views/Auth/login_screen.dart';
 import 'package:elmamlouk_mall/Views/Auth/reset_password_screen.dart';
 import 'package:elmamlouk_mall/Views/Auth/sign_up_screen.dart';
 import 'package:elmamlouk_mall/Views/Auth/success_SignUp_screen.dart';
+import 'package:elmamlouk_mall/Views/Auth/verify_code_for_signup.dart';
 import 'package:elmamlouk_mall/Views/Auth/verify_code_screen.dart';
 import 'package:elmamlouk_mall/Views/Home/home_screen.dart';
 import 'package:elmamlouk_mall/Views/Langs/languages_screen.dart';
@@ -16,14 +17,14 @@ class AppRoutes {
   static const String loginScreen = "/loginScreen";
   static const String signUpScreen = "/signUpScreen";
   static const String checkEmailScreen = "/checkEmailScreen";
+  static const String verifyCodeForSignUpScreen = "/verifyCodeForSignUpScreen";
   static const String successSignupScreen = "/successSignupScreen";
   static const String forgotPasswordScreen = "/forgotPasswordScreen";
   static const String verifyCodeScreen = "/verifyCodeScreen";
   static const String resetPasswordScreen = "/resetPasswordScreen";
   static const String successNewPassScreen = "/successNewPassScreen";
   static const String languageScreen = "/languageScreen";
-   static const String homeScreen = "/homeScreen";
-
+  static const String homeScreen = "/homeScreen";
 }
 
 Map<String, Widget Function(BuildContext)> routes = {
@@ -31,12 +32,13 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoutes.loginScreen: (context) => const LoginScreen(),
   AppRoutes.signUpScreen: (context) => const SignUpScreen(),
   AppRoutes.checkEmailScreen: (context) => const CheckEmailScreen(),
+  AppRoutes.verifyCodeForSignUpScreen: (context) =>
+      const VerifyCodeForSignUpScreen(),
   AppRoutes.successSignupScreen: (context) => const SuccessSignupScreen(),
   AppRoutes.forgotPasswordScreen: (context) => const ForgotPasswordScreen(),
   AppRoutes.verifyCodeScreen: (context) => const VerifyCodeScreen(),
   AppRoutes.resetPasswordScreen: (context) => const ResetPasswordScreen(),
   AppRoutes.successNewPassScreen: (context) => const SuccessNewPassScreen(),
   AppRoutes.languageScreen: (context) => const LanguagesScreen(),
-  AppRoutes.homeScreen:(context)=>const HomeScreen(),
-
+  AppRoutes.homeScreen: (context) => const HomeScreen(),
 };

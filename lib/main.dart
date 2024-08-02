@@ -1,6 +1,5 @@
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
-import 'package:elmamlouk_mall/Core/Localization/change_language.dart';
-import 'package:elmamlouk_mall/Core/Localization/translation.dart';
+ import 'package:elmamlouk_mall/Core/Localization/translation.dart';
 import 'package:elmamlouk_mall/Core/Services/services.dart';
 import 'package:elmamlouk_mall/Views/Splash/splash_screen.dart';
 import 'package:elmamlouk_mall/routes.dart';
