@@ -1,7 +1,6 @@
 import 'package:elmamlouk_mall/Controller/auth/login_controller.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 import 'package:elmamlouk_mall/Core/Constants/images.dart';
-import 'package:elmamlouk_mall/Views/Home/home_screen.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customButton.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customPassTextField.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customRaw.dart';
@@ -91,7 +90,7 @@ class LoginScreen extends StatelessWidget {
               CustomButton(
                   title: "Login",
                   onpressed: () {
-                    Get.to(() => const HomeScreen());
+                    controller.goToHome();
                   }),
               SizedBox(
                 height: h * .02,
