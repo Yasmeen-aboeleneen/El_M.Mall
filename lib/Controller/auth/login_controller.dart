@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 abstract class LoginController extends GetxController {
   login();
   goToSignUp();
-  goToHome();
+  goToForgotPasswordScreen();
 }
 
 class LoginControllerImplement extends LoginController {
@@ -19,7 +19,7 @@ class LoginControllerImplement extends LoginController {
   login() {
     var formData = formState.currentState;
     if (formData!.validate()) {
-      print('Valid');
+      Get.offNamed(AppRoutes.homeScreen);
     } else {
       print('Not valid');
     }
@@ -27,12 +27,12 @@ class LoginControllerImplement extends LoginController {
 
   @override
   goToSignUp() {
-    Get.toNamed(AppRoutes.signUpScreen);
+    Get.offNamed(AppRoutes.signUpScreen);
   }
 
   @override
-  goToHome() {
-    Get.offAllNamed(AppRoutes.homeScreen);
+  goToForgotPasswordScreen() {
+    Get.offNamed(AppRoutes.forgotPasswordScreen);
   }
 
   @override

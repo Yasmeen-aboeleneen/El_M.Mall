@@ -15,7 +15,7 @@ class ForgotPasswordControllerImplement extends ForgotPasswordController {
   checkEmail() {
     var formData = formState.currentState;
     if (formData!.validate()) {
-      print('Valid');
+      Get.offNamed(AppRoutes.verifyCodeScreen);
     } else {
       print('Not valid');
     }
@@ -35,8 +35,8 @@ class ForgotPasswordControllerImplement extends ForgotPasswordController {
 
   @override
   void dispose() {
-     email.dispose();
- 
+    email.dispose();
+
     super.dispose();
   }
 }

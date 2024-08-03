@@ -1,5 +1,5 @@
+import 'package:elmamlouk_mall/Controller/auth/login_controller.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
-import 'package:elmamlouk_mall/Views/Auth/forgot_password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,6 +16,7 @@ class _CustomRawState extends State<CustomRaw> {
 
   @override
   Widget build(BuildContext context) {
+    LoginControllerImplement controller = Get.put(LoginControllerImplement());
     var w = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(10),
@@ -47,7 +48,7 @@ class _CustomRawState extends State<CustomRaw> {
 
           GestureDetector(
               onTap: () {
-                Get.to(() => const ForgotPasswordScreen());
+                controller.goToForgotPasswordScreen();
               },
               child: Text(
                 "Forgot Password ?",

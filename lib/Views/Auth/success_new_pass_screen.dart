@@ -1,4 +1,4 @@
-import 'package:elmamlouk_mall/Controller/auth/sign_up_controller.dart';
+import 'package:elmamlouk_mall/Controller/auth/success_newpass_controller.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,7 +9,8 @@ class SuccessNewPassScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SignUpControllerImplement controller = Get.put(SignUpControllerImplement());
+    SuccessNewPasswordControllerImplement controller =
+        Get.put(SuccessNewPasswordControllerImplement());
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -24,43 +25,45 @@ class SuccessNewPassScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(45),
           ),
           padding: const EdgeInsets.all(15),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.check_circle_outlined,
-                size: w * .4,
-                color: kveryWhite,
-              ),
-              Text(
-                textAlign: TextAlign.center,
-                "Reset Password Success",
-                style: GoogleFonts.notoSansOlChiki(
-                    fontWeight: FontWeight.bold,
-                    fontSize: w * .07,
-                    color: kveryWhite),
-              ),
-              SizedBox(
-                height: h * .02,
-              ),
-              GestureDetector(
-                onTap: () {
-                  controller.goToLogin();
-                },
-                child: Text(
+          child: ListView(children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.check_circle_outlined,
+                  size: w * .4,
+                  color: kveryWhite,
+                ),
+                Text(
                   textAlign: TextAlign.center,
-                  "Click here to \n Login to your account",
+                  "Reset Password Success",
                   style: GoogleFonts.notoSansOlChiki(
                       fontWeight: FontWeight.bold,
-                      fontSize: w * .048,
-                      color: kveryWhite,
-                      decoration: TextDecoration.underline,
-                      decorationColor: kveryWhite),
+                      fontSize: w * .07,
+                      color: kveryWhite),
                 ),
-              ),
-            ],
-          ),
+                SizedBox(
+                  height: h * .02,
+                ),
+                InkWell(
+                  onTap: () {
+                    controller.goToLoginScreen();
+                  },
+                  child: Text(
+                    textAlign: TextAlign.center,
+                    "Click here to \n Login to your account",
+                    style: GoogleFonts.notoSansOlChiki(
+                        fontWeight: FontWeight.bold,
+                        fontSize: w * .048,
+                        color: kveryWhite,
+                        decoration: TextDecoration.underline,
+                        decorationColor: kveryWhite),
+                  ),
+                ),
+              ],
+            ),
+          ]),
         ),
       ),
     );

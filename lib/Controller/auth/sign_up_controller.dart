@@ -17,12 +17,10 @@ class SignUpControllerImplement extends SignUpController {
   signUp() {
     var formData = formState.currentState;
     if (formData!.validate()) {
-      print('Valid');
+      Get.offNamed(AppRoutes.verifyCodeForSignUpScreen);
     } else {
       print('Not valid');
     }
-    
-    Get.offNamed(AppRoutes.checkEmailScreen);
   }
 
   @override

@@ -20,7 +20,7 @@ validInput(String val, int min, int max, String type) {
   if (val.isEmpty) {
     return "Field can't be empty";
   }
-  
+
   if (val.length < min) {
     return "Value can't be less than $min";
   }

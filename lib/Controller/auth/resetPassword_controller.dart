@@ -12,18 +12,16 @@ class ResetpasswordControllerImplement extends ResetpasswordController {
   late TextEditingController password;
   late TextEditingController repassword;
   @override
-  resetPassword() {
-    var formData = formState.currentState;
-    if (formData!.validate()) {
-      print('Valid');
-    } else {
-      print('Not valid');
-    }
-  }
+  resetPassword() {}
 
   @override
   goToSuccessNewPas() {
-    Get.offNamed(AppRoutes.successNewPassScreen);
+    var formData = formState.currentState;
+    if (formData!.validate()) {
+      Get.offNamed(AppRoutes.successNewPassScreen);
+    } else {
+      print('Not valid');
+    }
   }
 
   @override

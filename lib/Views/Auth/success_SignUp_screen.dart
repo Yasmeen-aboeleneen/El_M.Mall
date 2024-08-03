@@ -1,4 +1,4 @@
-import 'package:elmamlouk_mall/Controller/auth/sign_up_controller.dart';
+import 'package:elmamlouk_mall/Controller/auth/success_signup_controller.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,7 +9,8 @@ class SuccessSignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SignUpControllerImplement controller = Get.put(SignUpControllerImplement());
+    SuccessSignupControllerImplement controller =
+        Get.put(SuccessSignupControllerImplement());
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -43,9 +44,9 @@ class SuccessSignupScreen extends StatelessWidget {
               SizedBox(
                 height: h * .02,
               ),
-              GestureDetector(
+              InkWell(
                 onTap: () {
-                  controller.goToLogin();
+                  controller.goToLoginScreen();
                 },
                 child: Text(
                   textAlign: TextAlign.center,

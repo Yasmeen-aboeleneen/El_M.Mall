@@ -73,7 +73,6 @@ class ResetPasswordScreen extends StatelessWidget {
                 CustomButton(
                     title: "Reset",
                     onpressed: () {
-                      controller.resetPassword();
                       controller.goToSuccessNewPas();
                     }),
                 SizedBox(

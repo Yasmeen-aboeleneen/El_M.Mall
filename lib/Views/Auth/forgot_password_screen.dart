@@ -64,7 +64,6 @@ class ForgotPasswordScreen extends StatelessWidget {
                     title: "Check",
                     onpressed: () {
                       controller.checkEmail();
-                      controller.goToVerifyCode();
                     }),
                 SizedBox(
                   height: h * .035,

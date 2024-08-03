@@ -18,64 +18,67 @@ class VerifyCodeForSignUpScreen extends StatelessWidget {
         backgroundColor: kveryWhite,
         body: Container(
           padding: EdgeInsets.only(top: h * .25),
-          child: ListView(
-            children: [
-              Center(
-                child: Text(
-                  "Check Your Email",
+          child: Form(
+            key: controller.formState,
+            child: ListView(
+              children: [
+                Center(
+                  child: Text(
+                    "Check Your Email",
+                    style: GoogleFonts.notoSansOlChiki(
+                        fontWeight: FontWeight.bold,
+                        fontSize: w * .068,
+                        color: kPrimary),
+                  ),
+                ),
+                SizedBox(
+                  height: h * .011,
+                ),
+                Text(
+                  "We've sent the code to\n yasmeenaboeleneen10@gmail.com",
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.notoSansOlChiki(
                       fontWeight: FontWeight.bold,
-                      fontSize: w * .068,
-                      color: kPrimary),
+                      fontSize: w * .04,
+                      color: kGrey),
                 ),
-              ),
-              SizedBox(
-                height: h * .011,
-              ),
-              Text(
-                "We've sent the code to\n yasmeenaboeleneen10@gmail.com",
-                textAlign: TextAlign.center,
-                style: GoogleFonts.notoSansOlChiki(
-                    fontWeight: FontWeight.bold,
-                    fontSize: w * .04,
-                    color: kGrey),
-              ),
-              SizedBox(
-                height: h * .06,
-              ),
-              OtpTextField(
-                numberOfFields: 5,
-                borderColor: kPrimary,
-                cursorColor: kPrimary,
-                fieldWidth: w * .13,
-                borderRadius: BorderRadius.circular(20),
-                showFieldAsBox: true,
-                onCodeChanged: (String code) {},
-                onSubmit: (String verificationCode) {
-                  controller.goToSuccessSignUp();
-                },
-              ),
-              SizedBox(
-                height: h * .06,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: w * .06, bottom: h * .03),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: GestureDetector(
-                    child: Text(
-                      "Send code again",
-                      style: GoogleFonts.notoSansOlChiki(
-                          fontWeight: FontWeight.bold,
-                          fontSize: w * .04,
-                          color: kGrey,
-                          decoration: TextDecoration.underline,
-                          decorationColor: kGrey),
+                SizedBox(
+                  height: h * .06,
+                ),
+                OtpTextField(
+                  numberOfFields: 5,
+                  borderColor: kPrimary,
+                  cursorColor: kPrimary,
+                  fieldWidth: w * .13,
+                  borderRadius: BorderRadius.circular(20),
+                  showFieldAsBox: true,
+                  onCodeChanged: (String code) {},
+                  onSubmit: (String verificationCode) {
+                    controller.goToSuccessSignUp();
+                  },
+                ),
+                SizedBox(
+                  height: h * .06,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: w * .06, bottom: h * .03),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: GestureDetector(
+                      child: Text(
+                        "Send code again",
+                        style: GoogleFonts.notoSansOlChiki(
+                            fontWeight: FontWeight.bold,
+                            fontSize: w * .04,
+                            color: kGrey,
+                            decoration: TextDecoration.underline,
+                            decorationColor: kGrey),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ));
   }
