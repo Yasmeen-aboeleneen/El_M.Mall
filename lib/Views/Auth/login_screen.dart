@@ -1,6 +1,7 @@
 import 'package:elmamlouk_mall/Controller/auth/login_controller.dart';
 import 'package:elmamlouk_mall/Core/Constants/colors.dart';
 import 'package:elmamlouk_mall/Core/Constants/images.dart';
+import 'package:elmamlouk_mall/Core/Utils/Functions/alert_exit_app.dart';
 import 'package:elmamlouk_mall/Core/Utils/Functions/valid_input.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customButton.dart';
 import 'package:elmamlouk_mall/Views/Widget/AuthWidgets/customPassTextField.dart';
@@ -32,108 +33,111 @@ class LoginScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold, fontSize: w * .06, color: kGrey),
           ),
         ),
-        body: Container(
-          padding: const EdgeInsets.all(10),
-          child: Form(
-            key: controller.formState,
-            child: ListView(
-              children: [
-                SizedBox(
-                  height: h * .01,
-                ),
-                Center(
-                  child: Text(
-                    "Welcome Back",
-                    style: GoogleFonts.notoSansOlChiki(
-                        fontWeight: FontWeight.bold,
-                        fontSize: w * .07,
-                        color: kPrimary),
+        body: WillPopScope(
+          onWillPop: alertExitApp,
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            child: Form(
+              key: controller.formState,
+              child: ListView(
+                children: [
+                  SizedBox(
+                    height: h * .01,
                   ),
-                ),
-                SizedBox(
-                  height: h * .01,
-                ),
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 5, right: 5),
+                  Center(
                     child: Text(
-                      "Login with your email and password\n or login with social media",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.notoSansOlChiki(
-                          fontWeight: FontWeight.w500,
-                          fontSize: w * .04,
-                          color: kGrey),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: h * .07,
-                ),
-                Customtextfield(
-                  valid: (val) {
-                    return validInput(val!, 5, 100, "email");
-                  },
-                  labelText: 'Email',
-                  hintText: 'Enter your email',
-                  iconData: Icons.email,
-                  textEditingController: controller.email,
-                ),
-                SizedBox(
-                  height: h * .035,
-                ),
-                CustomPasswordtextfield(
-                  valid: (val) {
-                    return validInput(val!, 8, 30, "password");
-                  },
-                  hintText: "Enter your password",
-                  labelText: "Password",
-                  textEditingController: controller.password,
-                ),
-                SizedBox(
-                  height: h * .02,
-                ),
-                const CustomRaw(),
-                SizedBox(
-                  height: h * .02,
-                ),
-                CustomButton(
-                    title: "Login",
-                    onpressed: () {
-                      controller.login();
-                    }),
-                SizedBox(
-                  height: h * .02,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    controller.goToSignUp();
-                  },
-                  child: Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
-                      "Don't have an account? SignUp",
-                      textAlign: TextAlign.center,
+                      "Welcome Back",
                       style: GoogleFonts.notoSansOlChiki(
                           fontWeight: FontWeight.bold,
-                          fontSize: w * .04,
+                          fontSize: w * .07,
                           color: kPrimary),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: h * .02,
-                ),
-                const Dividers(),
-                SizedBox(
-                  height: h * .02,
-                ),
-                const Row(
-                  children: [
-                    SocialmediaRow(image: Images.google, text: "Google"),
-                    SocialmediaRow(image: Images.facebook, text: "Facebook"),
-                  ],
-                )
-              ],
+                  SizedBox(
+                    height: h * .01,
+                  ),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 5, right: 5),
+                      child: Text(
+                        "Login with your email and password\n or login with social media",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.notoSansOlChiki(
+                            fontWeight: FontWeight.w500,
+                            fontSize: w * .04,
+                            color: kGrey),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: h * .07,
+                  ),
+                  Customtextfield(
+                    valid: (val) {
+                      return validInput(val!, 5, 100, "email");
+                    },
+                    labelText: 'Email',
+                    hintText: 'Enter your email',
+                    iconData: Icons.email,
+                    textEditingController: controller.email,
+                  ),
+                  SizedBox(
+                    height: h * .035,
+                  ),
+                  CustomPasswordtextfield(
+                    valid: (val) {
+                      return validInput(val!, 8, 30, "password");
+                    },
+                    hintText: "Enter your password",
+                    labelText: "Password",
+                    textEditingController: controller.password,
+                  ),
+                  SizedBox(
+                    height: h * .02,
+                  ),
+                  const CustomRaw(),
+                  SizedBox(
+                    height: h * .02,
+                  ),
+                  CustomButton(
+                      title: "Login",
+                      onpressed: () {
+                        controller.login();
+                      }),
+                  SizedBox(
+                    height: h * .02,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      controller.goToSignUp();
+                    },
+                    child: Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Text(
+                        "Don't have an account? SignUp",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.notoSansOlChiki(
+                            fontWeight: FontWeight.bold,
+                            fontSize: w * .04,
+                            color: kPrimary),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: h * .02,
+                  ),
+                  const Dividers(),
+                  SizedBox(
+                    height: h * .02,
+                  ),
+                  const Row(
+                    children: [
+                      SocialmediaRow(image: Images.google, text: "Google"),
+                      SocialmediaRow(image: Images.facebook, text: "Facebook"),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ));
