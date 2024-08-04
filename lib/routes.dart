@@ -1,3 +1,4 @@
+import 'package:elmamlouk_mall/Core/MiddleWare/myMiddleWare.dart';
 import 'package:elmamlouk_mall/Views/Auth/forgot_password_screen.dart';
 import 'package:elmamlouk_mall/Views/Auth/login_screen.dart';
 import 'package:elmamlouk_mall/Views/Auth/reset_password_screen.dart';
@@ -9,9 +10,11 @@ import 'package:elmamlouk_mall/Views/Home/home_screen.dart';
 import 'package:elmamlouk_mall/Views/Langs/languages_screen.dart';
 import 'package:elmamlouk_mall/Views/OnBoarding/onboarding_screen.dart';
 import 'package:elmamlouk_mall/Views/Auth/success_new_pass_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:elmamlouk_mall/Views/Splash/splash_screen.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoutes {
+  static const String splashScreen = "/";
   static const String onBoardingScreen = "/onBoardingScreen";
   static const String loginScreen = "/loginScreen";
   static const String signUpScreen = "/signUpScreen";
@@ -25,17 +28,29 @@ class AppRoutes {
   static const String homeScreen = "/homeScreen";
 }
 
-Map<String, Widget Function(BuildContext)> routes = {
-  AppRoutes.onBoardingScreen: (context) => const OnboardingScreen(),
-  AppRoutes.loginScreen: (context) => const LoginScreen(),
-  AppRoutes.signUpScreen: (context) => const SignUpScreen(),
-  AppRoutes.verifyCodeForSignUpScreen: (context) =>
-      const VerifyCodeForSignUpScreen(),
-  AppRoutes.successSignupScreen: (context) => const SuccessSignupScreen(),
-  AppRoutes.forgotPasswordScreen: (context) => const ForgotPasswordScreen(),
-  AppRoutes.verifyCodeScreen: (context) => const VerifyCodeScreen(),
-  AppRoutes.resetPasswordScreen: (context) => const ResetPasswordScreen(),
-  AppRoutes.successNewPassScreen: (context) => const SuccessNewPassScreen(),
-  AppRoutes.languageScreen: (context) => const LanguagesScreen(),
-  AppRoutes.homeScreen: (context) => const HomeScreen(),
-};
+List<GetPage<dynamic>>? routes = [
+  GetPage(name: AppRoutes.splashScreen, page: () => const SplashScreen(),middlewares: [MyMiddleware()]),
+  GetPage(
+      name: AppRoutes.onBoardingScreen, page: () => const OnboardingScreen(),),
+  GetPage(name: AppRoutes.loginScreen, page: () => const LoginScreen()),
+  GetPage(name: AppRoutes.signUpScreen, page: () => const SignUpScreen()),
+  GetPage(
+      name: AppRoutes.verifyCodeForSignUpScreen,
+      page: () => const VerifyCodeForSignUpScreen()),
+  GetPage(
+      name: AppRoutes.successSignupScreen,
+      page: () => const SuccessSignupScreen()),
+  GetPage(
+      name: AppRoutes.forgotPasswordScreen,
+      page: () => const ForgotPasswordScreen()),
+  GetPage(
+      name: AppRoutes.verifyCodeScreen, page: () => const VerifyCodeScreen()),
+  GetPage(
+      name: AppRoutes.resetPasswordScreen,
+      page: () => const ResetPasswordScreen()),
+  GetPage(
+      name: AppRoutes.successNewPassScreen,
+      page: () => const SuccessNewPassScreen()),
+  GetPage(name: AppRoutes.languageScreen, page: () => const LanguagesScreen()),
+  GetPage(name: AppRoutes.homeScreen, page: () => const HomeScreen()),
+];
